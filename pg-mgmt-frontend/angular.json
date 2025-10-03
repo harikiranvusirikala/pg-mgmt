@@ -26,6 +26,8 @@
               }
             ],
             "styles": [
+              "@ngxpert/hot-toast/styles.css",
+              "src/custom-theme.scss",
               "src/styles.css",
               "node_modules/ngx-spinner/animations/ball-spin-clockwise.css",
               "node_modules/font-awesome/css/font-awesome.css"
