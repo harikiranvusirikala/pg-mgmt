@@ -32,6 +32,7 @@
 	<build></build>
 
 	<modules>
+		<module>pg-mgmt-frontend</module>
 		<module>pg-mgmt-backend</module>
 	</modules>
 
