@@ -17,7 +17,6 @@ import {
   SocialLoginModule,
   SOCIAL_AUTH_CONFIG,
 } from '@abacritt/angularx-social-login';
-import { LoginComponent } from './user/login/login.component';
 
 /**
  * Bootstraps the Angular application with shared modules and feature screens.
@@ -34,10 +33,26 @@ import { LoginComponent } from './user/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    SocialLoginModule,
     // eslint-disable-next-line deprecation/deprecation
     BrowserAnimationsModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: SOCIAL_AUTH_CONFIG,
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '<google_client_id>',
+            ),
+          },
+        ],
+        onError: (err: unknown) => console.error('⚠️ Social login error:', err),
+      } as SocialAuthServiceConfig,
+    },
 })
 export class AppModule {}
