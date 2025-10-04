@@ -4,6 +4,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
@@ -38,6 +39,7 @@ import {
     BrowserAnimationsModule,
   ],
   providers: [
+    SocialAuthService,
     provideHttpClient(withInterceptorsFromDi()),
     {
       provide: SOCIAL_AUTH_CONFIG,
@@ -54,5 +56,6 @@ import {
         onError: (err: unknown) => console.error('⚠️ Social login error:', err),
       } as SocialAuthServiceConfig,
     },
+  ],
 })
 export class AppModule {}
