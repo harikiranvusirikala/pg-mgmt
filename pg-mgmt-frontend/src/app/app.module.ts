@@ -6,8 +6,10 @@ import {
 } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './landing/landing.component';
 // eslint-disable-next-line deprecation/deprecation
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 import {
   GoogleLoginProvider,
   SocialAuthService,
@@ -23,12 +25,15 @@ import { LoginComponent } from './user/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LandingComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     // eslint-disable-next-line deprecation/deprecation
     BrowserAnimationsModule,
   ],
