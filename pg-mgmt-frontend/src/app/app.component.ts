@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 
 import { AuthService } from './core/services/auth.service';
+import { AdminAuthService } from './core/services/admin-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
   };
 
   constructor(
+    private readonly adminAuthService: AdminAuthService,
     private readonly authService: AuthService,
     private readonly router: Router,
     private readonly socialAuthService: SocialAuthService,
