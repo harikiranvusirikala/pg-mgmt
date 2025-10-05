@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend": {
+    "pg-mgmt-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,7 +14,6 @@
           "builder": "@angular/build:application",
           "options": {
             "baseHref": "/",
-            "outputPath": "../pg-mgmt-backend/src/main/resources/static",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["src/polyfills.ts"],
@@ -55,10 +54,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "frontend:build:production"
+              "buildTarget": "pg-mgmt-frontend:build:production"
             },
             "development": {
-              "buildTarget": "frontend:build:development"
+              "buildTarget": "pg-mgmt-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"

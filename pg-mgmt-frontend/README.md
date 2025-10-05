@@ -1,4 +1,4 @@
-# Frontend
+# PG ManagementFrontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
 
@@ -57,3 +57,16 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## API configuration
+
+Set the API base URL in `src/environments/environment.ts` (and the production counterpart) so the built-in HTTP interceptor can attach JWT tokens to backend requests:
+
+```typescript
+export const environment = {
+  production: false,
+  apiBaseUrl: "http://localhost:8080",
+};
+```
+
+For production builds, update `apiBaseUrl` to the deployed backend URL.
