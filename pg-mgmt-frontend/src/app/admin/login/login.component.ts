@@ -15,6 +15,7 @@ import {
   AdminAuthService,
   AdminUser,
 } from '../../core/services/admin-auth.service';
+import { ApiConfig } from '../../core/config/api.config';
 
 @Component({
   selector: 'app-admin-login',
@@ -70,7 +71,7 @@ export class AdminLoginComponent implements OnInit, OnDestroy {
       .post<{
         token: string;
         admin: AdminUser;
-      }>('http://localhost:8080/auth/admin/google', { idToken: user.idToken })
+      }>(ApiConfig.authAdmin, { idToken: user.idToken })
       .subscribe({
         next: (response) => {
           if (response.token && response.admin) {

@@ -14,15 +14,18 @@
     >
     </asl-google-signin-button>
 
-    <mat-progress-spinner
-      *ngIf="isLoading"
-      class="google-login-spinner"
-      diameter="28"
-      mode="indeterminate"
-      color="accent"
-    >
-    </mat-progress-spinner>
+    @if (isLoading) {
+      <mat-progress-spinner
+        class="google-login-spinner"
+        diameter="28"
+        mode="indeterminate"
+        color="accent"
+      >
+      </mat-progress-spinner>
+    }
   </div>
 
-  <p *ngIf="isLoading" class="signing-in-hint">Signing you in…</p>
+  @if (isLoading) {
+    <p class="signing-in-hint">Signing you in…</p>
+  }
 </div>
