@@ -9,6 +9,7 @@ import {
 } from '@abacritt/angularx-social-login';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../core/services/auth.service';
+import { ApiConfig } from '../../core/config/api.config';
 import { Subscription } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -63,12 +64,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isLoading = true;
 
     this.http
-      .post<{ token: string; tenant: any }>(
-        'http://localhost:8080/auth/google',
-        {
-          idToken: user.idToken,
-        },
-      )
+      .post<{ token: string; tenant: any }>(ApiConfig.authTenant, {
+        idToken: user.idToken,
+      })
       .subscribe({
         next: (response) => {
           console.log('✅ Login success:', response);
