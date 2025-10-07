@@ -5,6 +5,7 @@ import { AdminAuthGuard } from '../core/guards/admin-auth.guard';
 import { AdminLoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { TenantsComponent } from './tenants/tenants.component';
 
 /**
  * Route map for the admin portal, protecting protected pages with the admin guard.
@@ -18,6 +19,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'rooms', component: RoomsComponent },
+      { path: 'tenants', component: TenantsComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
