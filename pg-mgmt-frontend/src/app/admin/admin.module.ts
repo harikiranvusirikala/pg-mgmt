@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HomeComponent } from './home/home.component';
+import { RoomsComponent } from './rooms/rooms.component';
 import { AdminLoginComponent } from './login/login.component';
 
 /**
@@ -13,6 +14,7 @@ import { AdminLoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     HomeComponent,
+    RoomsComponent,
   ],
   imports: [
     CommonModule,

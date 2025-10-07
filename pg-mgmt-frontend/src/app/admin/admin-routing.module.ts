@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminAuthGuard } from '../core/guards/admin-auth.guard';
 import { AdminLoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
 /**
  * Route map for the admin portal, protecting protected pages with the admin guard.
@@ -16,6 +17,7 @@ const routes: Routes = [
     canActivateChild: [AdminAuthGuard],
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'rooms', component: RoomsComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
