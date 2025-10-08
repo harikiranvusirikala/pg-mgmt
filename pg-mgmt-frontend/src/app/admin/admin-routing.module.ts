@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { SetupComponent } from './setup/setup.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { TenantsComponent } from './tenants/tenants.component';
+import { ReportComponent } from './report/report.component';
 
 /**
  * Route map for the admin portal, protecting protected pages with the admin guard.
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'setup', component: SetupComponent },
       { path: 'rooms', component: RoomsComponent },
       { path: 'tenants', component: TenantsComponent },
+      { path: 'report', component: ReportComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },

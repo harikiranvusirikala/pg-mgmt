@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { SetupComponent } from './setup/setup.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { TenantsComponent } from './tenants/tenants.component';
+import { ReportComponent } from './report/report.component';
+import { NgChartsModule } from 'ng2-charts';
 import { AdminLoginComponent } from './login/login.component';
 
 /**
@@ -19,12 +21,14 @@ import { AdminLoginComponent } from './login/login.component';
     SetupComponent,
     RoomsComponent,
     TenantsComponent,
+    ReportComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    NgChartsModule,
     AdminRoutingModule,
     AdminLoginComponent,
   ],
