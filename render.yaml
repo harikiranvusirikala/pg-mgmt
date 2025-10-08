@@ -1,0 +1,10 @@
+version: "1"
+services:
+- type: web
+  name: pgmanager
+  runtime: static
+  repo: https://github.com/harikiranvusirikala/pg-mgmt
+  buildCommand: npm install; npm run build
+  staticPublishPath: dist/pg-mgmt-frontend/browser
+  autoDeployTrigger: commit
+  rootDir: pg-mgmt-frontend
